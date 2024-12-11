@@ -62,7 +62,7 @@ class LineChartPainter extends AxisChartPainter<LineChartData> {
     PaintHolder<LineChartData> holder,
   ) {
     final data = holder.data;
-    super.paint(context, canvasWrapper, holder);
+    
     if (data.lineBarsData.isEmpty) {
       return;
     }
@@ -80,6 +80,8 @@ class LineChartPainter extends AxisChartPainter<LineChartData> {
 
       clipToBorder(canvasWrapper, holder);
     }
+
+    super.paint(context, canvasWrapper, holder);
 
     for (final betweenBarsData in data.betweenBarsData) {
       drawBetweenBarsArea(canvasWrapper, data, betweenBarsData, holder);
